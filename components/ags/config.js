@@ -24,6 +24,8 @@ const WHICH = "nier";
 globalThis.WHICH = WHICH;
 
 let top_bar_height = 0;
+// HACK using alongside with waybar
+let bot_bar_height = 0;
 
 
 const top = () =>
@@ -77,11 +79,14 @@ const top = () =>
       }),
     ],
     setup: (box) => Utils.timeout(1000,async() => {
-      top_bar_height = box.get_allocation().height + 10;
-      while (true) { // in a loop becauses if hyprland config is changed, it resets the reserved space
-        execAsync(`hyprctl keyword monitor ,addreserved,${top_bar_height},${top_bar_height},0,0`).then(print).catch(print);
-        await new Promise((r) => Utils.timeout(5000,r));
-      }
+      // top_bar_height = box.get_allocation().height + 10;
+      // HACK using alongside with waybar
+      top_bar_height = 45;
+      bot_bar_height = box.get_allocation().height + 10;
+      // while (true) { // in a loop becauses if hyprland config is changed, it resets the reserved space
+      //   execAsync(`hyprctl keyword monitor,addreserved,${top_bar_height},${bot_bar_height},0,0`).then(print).catch(print);
+      //   await new Promise((r) => Utils.timeout(5000,r));
+      // }
     }),
   });
 
@@ -130,12 +135,13 @@ dark.connect("changed", () => {
   Utils.writeFile(hyprconf,`${themedir}/theme.conf`).then(()=>{
     print("reloaded hypr")
   }).catch((e) => print("error",e));
-  Utils.timeout(1000,() => {
-    execAsync(`hyprctl keyword monitor ,addreserved,${top_bar_height},${top_bar_height},0,0`).then(print).catch(print);
-  })
+  // Utils.timeout(1000,() => {
+  //   execAsync(`hyprctl keyword monitor ,addreserved,${top_bar_height},${bot_bar_height},0,0`).then(print).catch(print);
+  // })
 }) 
 
 execAsync(["bash","-c",`pkill dunst;ags -b notify -c ${App.configDir}/windows/notifications/notifications.js`])
+// App.toggleWindow("settings");
 
 
 const BottomBar = ({ monitor } = {}) =>

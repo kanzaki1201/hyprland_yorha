@@ -7,11 +7,10 @@ export const settings_title_bottom = 50*scale;
 
 export const workspace_workspaces = 5;
 
-export const top_spacing = 20*scale;
+export const top_spacing = 10*scale;
 export const top_icon_size = 40*scale;
 
 export const nier_border_size = 110*scale;
-// export const nier_border_size = 10*scale;
 
 export const button_pointer_size = 35*scale;
 export const button_width = 190*scale;
