@@ -15,7 +15,7 @@ $button_spacing_horizontal: 5px;
     padding-top: calc(8px - #{$accent_border_dist});
     padding-bottom: calc(7px - #{$accent_border_dist});
     background-position: -100%;
-    font-family: FOT-Rodin Pro B, sans-serif;
+    font-family: Sarasa Term TC, FOT-Rodin Pro B, sans-serif;
     color: $tan;
   }
 }
@@ -40,7 +40,7 @@ $button_spacing_horizontal: 5px;
 // the actual button looking thing ( is actuaally a label :0 )
 .nier-long-button label {
   font-size: 2rem;
-  font-family: FOT-Rodin Pro M, sans-serif;
+  font-family: Sarasa Term TC, FOT-Rodin Pro M, sans-serif;
   background: linear-gradient(
     90deg,
     rgba($brown, 0.25) 0%,
