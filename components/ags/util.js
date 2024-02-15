@@ -25,7 +25,7 @@ async function get_cursor() {
 const home = `/home/${Utils.exec("whoami")}`;
 const themedir = App.configDir.split("/").slice(0, -2).join("/");
 
-const dark = Variable(false, {});
+const dark = Variable(true, {});
 
 globalThis.dark = dark;
 
