@@ -79,11 +79,10 @@ const top = () =>
       }),
     ],
     setup: (box) => Utils.timeout(1000,async() => {
-      // top_bar_height = box.get_allocation().height + 10;
-      // HACK using alongside with waybar
-      top_bar_height = 45;
+      top_bar_height = box.get_allocation().height + 10;
       bot_bar_height = box.get_allocation().height + 10;
-      // while (true) { // in a loop becauses if hyprland config is changed, it resets the reserved space
+      // HACK: using maginc numbers in hyperland.conf to use alongside with waybar
+      //   ile (true) { // in a loop becauses if hyprland config is changed, it resets the reserved space
       //   execAsync(`hyprctl keyword monitor,addreserved,${top_bar_height},${bot_bar_height},0,0`).then(print).catch(print);
       //   await new Promise((r) => Utils.timeout(5000,r));
       // }
