@@ -475,6 +475,6 @@ const NierSettingPane = (
         player: 300+600+500+100,
       },
     windows: [
-      NierSettingPane({})
+      // NierSettingPane({})
     ],
   };
