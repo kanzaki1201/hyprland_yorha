@@ -7,3 +7,7 @@ if status is-interactive
 	theme
     sttt scanline --scanline-reverse true -d 0.5
 end
+
+function fish_prompt
+    fishline -s $status
+end
