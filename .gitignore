@@ -7,3 +7,4 @@ np
 os
 pywal
 subprocess
+**.goutputstream-**
